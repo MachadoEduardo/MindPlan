@@ -7,10 +7,9 @@ export default {
     content: [
         './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
         './storage/framework/views/*.php',
-        './resources/views/**/*.blade.php',
-        './resources/views/**/*.js',
-        './resources/views/**/*.vue',
-        "./node_modules/flowbite/**/*.js", 
+        "./resources/**/*.blade.php",
+        "./resources/**/*.js",
+        "./resources/**/*.vue",
     ],
 
     theme: {
@@ -23,9 +22,7 @@ export default {
             '6': '60px',
         },
         extend: {
-            fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
-            },
+            
         },
     },
 
