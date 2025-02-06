@@ -19,6 +19,10 @@
                 <li class="hover:text-[#E47F15] cursor-pointer">Clinicas</li>
                 <li class="hover:text-[#E47F15] cursor-pointer">Consultas</li>
                 <li class="hover:text-[#E47F15] cursor-pointer">Ajuda</li>
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <button type="submit" class="btn btn-danger">Logout</button>
+                </form>
                 @php
                     $patient = Auth::user();
                 @endphp
