@@ -8,28 +8,26 @@
     
     <!-- CSS deve vir antes do conteúdo -->
     @vite('resources/css/app.css')
+    <style>
+        html, body, label {
+        font-family: 'Roboto', sans-serif;
+    }
+    </style>
 </head>
 
 <body class="min-h-screen flex flex-col">
-    <header>
+    <header class="w-full max-w-9/10 mx-auto  top-0">
         <nav class="my-4">
-            <ul class="flex flex-row justify-center gap-16 items-center font-medium text-[#46474E]">
-                <li><img class="mr-55 cursor-pointer" src="{{ asset('img/logo (2).png') }}" alt=""></li>
-                <a href="{{ route('home')}}"><li class="hover:text-[#E47F15] cursor-pointer">Home</li></a>
-                <li class="hover:text-[#E47F15] cursor-pointer">Clinicas</li>
-                <li class="hover:text-[#E47F15] cursor-pointer">Consultas</li>
-                <li class="hover:text-[#E47F15] cursor-pointer">Ajuda</li>
-                <form method="POST" action="{{ route('logout') }}">
-                    @csrf
-                    <button type="submit" class="btn btn-danger">Logout</button>
-                </form>
-                @php
-                    $patient = Auth::user();
-                @endphp
-                <a href="{{ route('patients.show', $patient->id)}}"><li class="hover:text-[#E47F15] cursor-pointer">Meu perfil</li></a>
-                <li><img src="{{ asset('img/velhasm.png') }}" alt=""></li>
-                <li class="hover:bg-[#E47F15] cursor-pointer rounded-2xl group"><img
-                        class="group-hover:invert group-hover:brightness-0" src="{{ asset('img/hamb.svg') }}" alt=""></li>
+            <ul class="flex flex-row justify-between items-center font-medium text-[#46474E]">
+                <li><img class=" cursor-pointer" src="{{ asset('img/logo (2).png') }}" alt=""></li>
+                <div class="flex gap-9 font-semibold">
+                    <a href="{{ route('home')}}"><li class="hover:text-[#E47F15] cursor-pointer">Home</li></a>
+                    @yield('health-topics')
+                    <a href="{{ route('home')}}"><li class="hover:text-[#E47F15] cursor-pointer">Sobre</li></a>
+                    @yield('logout')
+                    <a href="{{ route('register')}}" class="signup w-30 h-7 rounded-lg content-center px-3 bg-orange-400 text-white hover:bg-orange-500">Cadastre-se</a>
+                    <a href="{{ route('login')}}"><button class="login w-20 h-7 rounded-lg cursor-pointer bg-[#b3e4f9] text-white hover:bg-[#82d3f6]">Entrar</button></a>
+                </div>
             </ul>
         </nav>
     </header>
@@ -48,7 +46,7 @@
             </div>
 
             <!-- Divisor -->
-            <img src="{{ asset('img/separaçãofoot.png') }}" alt="" class="h-40">
+            <img src="{{ asset('img/separaçãofoot.png') }}" alt="" class="h-max">
 
             <!-- Menu -->
             <div class="flex flex-col gap-2 min-w-[200px]">
@@ -60,7 +58,7 @@
             </div>
 
             <!-- Divisor -->
-            <img src="{{ asset('img/separaçãofoot.png') }}" alt="" class="h-40">
+            <img src="{{ asset('img/separaçãofoot.png') }}" alt="" class="h-max">
 
             <!-- Contatos -->
             <div class="flex flex-col gap-3 min-w-[250px]">
@@ -89,11 +87,11 @@
             </div>
 
             <!-- Divisor -->
-            <img src="{{ asset('img/separaçãofoot.png') }}" alt="" class="h-40">
+            <img src="{{ asset('img/separaçãofoot.png') }}" alt="" class="h-max">
 
             <!-- Slogan -->
-            <div class="text-center italic font-bold max-w-[300px]">
-                <p class="text-lg">Simplificando a conexão entre pacientes e médicos!</p>
+            <div class="text-center italic font-bold max-w-[300px] ">
+                <p class="text-lg text-left">Simplificando a conexão entre pacientes e médicos!</p>
             </div>
         </div>
     </footer>

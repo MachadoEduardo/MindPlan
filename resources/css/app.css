@@ -1,2 +1,5 @@
 @import "tailwindcss";
 @source "../views";
+@theme {
+    --radius-5xl: 2.2rem; 
+  }

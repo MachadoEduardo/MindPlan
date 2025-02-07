@@ -11,14 +11,14 @@ use App\Http\Requests\UpdateUserRequest;
 class UserController extends Controller
 {
     public function dashboard()
-{
+    {
     return view('dashboard', [
         'totalUsers' => User::count(),
         'totalPatients' => \App\Models\Patient::count(),
         'lastUser' => User::latest()->first(),
         'latestUsers' => User::latest()->take(5)->get()
     ]);
-}
+    }
     public function index(){
         $users = User::paginate(15);
         return view('admin.users.index', compact('users'));

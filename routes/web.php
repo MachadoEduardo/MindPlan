@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+Route::get('/mainpage', function () {
+    return view('mainpage');
+})->name('mainpage');
+
 /*Route::get('/admin', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified', CheckIfIsAdmin::class])->name('dashboard');*/
